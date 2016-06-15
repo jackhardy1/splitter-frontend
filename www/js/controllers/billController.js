@@ -1,8 +1,8 @@
 (function() {
 
-  var app = angular.module('peopleController', []);
+  var app = angular.module('billController', []);
 
-  app.controller('PeopleController',
+  app.controller('BillController',
     function($scope, $http) {
       var url = 'http://localhost:3000/bills';
 

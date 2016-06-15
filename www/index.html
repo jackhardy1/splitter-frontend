@@ -14,7 +14,7 @@
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-    <script src="js/controllers/people_controller.js"></script>
+    <script src="js/controllers/billController.js"></script>
 
 
     <!-- cordova script (this will be a 404 during development) -->
@@ -31,7 +31,7 @@
       </ion-header-bar>
       <ion-content>
 
-        <ul class="list" ng-controller="PeopleController">
+        <ul class="list" ng-controller="BillController">
           <li class="item" ng-repeat="bill in bills">
             <h3>{{bill.event}}</h3>
           </li>
