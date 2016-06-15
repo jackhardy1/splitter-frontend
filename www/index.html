@@ -14,7 +14,6 @@
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
-    <script src="js/controllers/billController.js"></script>
 
 
     <!-- cordova script (this will be a 404 during development) -->
@@ -22,6 +21,8 @@
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
+    <script src="js/services/BillService.js"></script>
+    <script src="js/controllers/BillController.js"></script>
   </head>
   <body ng-app="starter">
 
@@ -31,10 +32,12 @@
       </ion-header-bar>
       <ion-content>
 
-        <ul class="list" ng-controller="BillController">
-          <li class="item" ng-repeat="bill in bills">
+        <ul class="list" ng-controller="BillController as ctrl">
+          <li class="item" ng-repeat="bill in ctrl.bills">
             <h3>{{bill.event}}</h3>
           </li>
+
+          <!-- <button ng-click="ctrl.deleteBill()"></button> -->
         </ul>
 
       </ion-content>
