@@ -16,6 +16,7 @@ module.exports = function(config){
 
         'www/js/**/*.js',
         'test/unit/**/*.js'
+
       ],
 
       autoWatch : true,

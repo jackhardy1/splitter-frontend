@@ -1,10 +1,13 @@
 angular.module('splitter')
        .controller('ItemController', ['ItemService', function(ItemService){
 
-         var self = this;
+ var self = this;
+ self. getItems = getItems;
 
-         ItemService.getAll(id)
-         .then(function(response){
-           self.items = response;
-         });
-       }]);
+  function getItems(id) {
+    ItemService.getAll(id)
+    .then(function(response){
+      self.items = response;
+    });
+  }
+}]);

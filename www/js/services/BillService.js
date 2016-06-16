@@ -4,7 +4,6 @@ angular.module('splitter')
 
   self.getAll = function() {
     var url = 'http://localhost:3000/bills/';
-
     return $http.get(url)
     .then(function(response){
       return response.data;

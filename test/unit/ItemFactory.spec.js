@@ -1,5 +1,6 @@
 describe('ItemFactory', function() {
   beforeEach(module('splitter'));
+  
 
   var Item, paidItem;
 

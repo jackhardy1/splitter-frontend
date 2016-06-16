@@ -2,9 +2,12 @@ angular.module('splitter')
        .controller('BillController', ['BillService', function(BillService){
 
   var self = this;
+  self.getBills = getBills;
 
-  BillService.getAll()
-  .then(function(response){
-    self.bills = response;
-  });
+  function getBills() {
+    BillService.getAll()
+    .then(function(response){
+      self.bills = response;
+    });
+  }
 }]);

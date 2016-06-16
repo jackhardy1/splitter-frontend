@@ -11,7 +11,6 @@ describe('BillService', function() {
   }));
 
   it('fetches a list of Bills', function(){
-
     var bill1 = { event: "Party"};
     var bill2 = { event: "Birthday"};
 
