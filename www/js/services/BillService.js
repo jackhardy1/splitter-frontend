@@ -1,4 +1,5 @@
-starter.service('BillService', ['$http', function($http) {
+angular.module('splitter')
+       .service('BillService', ['$http', function($http) {
   var self = this;
 
   self.getAll = function() {
