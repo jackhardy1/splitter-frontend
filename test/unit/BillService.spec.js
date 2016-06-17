@@ -10,6 +10,11 @@ describe('BillService', function() {
     httpBackend = $httpBackend;
   }));
 
+  beforeEach(function(){
+    httpBackend.expectGET('templates/bills.html').respond('');
+    httpBackend.expectGET('templates/home.html').respond('');
+  });
+
   it('fetches a list of Bills', function(){
     var bill1 = { event: "Party"};
     var bill2 = { event: "Birthday"};

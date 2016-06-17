@@ -10,6 +10,11 @@ describe('ItemService', function() {
     httpBackend = $httpBackend;
   }));
 
+  beforeEach(function(){
+    httpBackend.expectGET('templates/bills.html').respond('');
+    httpBackend.expectGET('templates/home.html').respond('');
+  });
+
   it('fetches a list of items', function() {
     httpBackend.expectGET("http://localhost:3000/bills/1/items").respond(itemData);
     itemService.getAll(id).then(function(items) {

@@ -19,7 +19,7 @@ angular.module('splitter', ['ionic'])
       url: '/',
       templateUrl: 'templates/home.html',
   })
-    .state('new-bill', {
+    .state('bills', {
       url: '/bills',
       templateUrl: 'templates/bills.html',
       controller: 'BillController as ctrl'
