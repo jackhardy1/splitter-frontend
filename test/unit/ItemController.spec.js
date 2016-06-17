@@ -11,10 +11,11 @@ describe('ItemController', function() {
     httpBackend = $httpBackend;
   }));
 
-  beforeEach(function(){
-    httpBackend.expectGET('templates/bills.html').respond('');
-    httpBackend.expectGET('templates/home.html').respond('');
-  });
+  // beforeEach(function(){
+  //   httpBackend.expectGET('templates/bills/new.html').respond('');
+  //   httpBackend.expectGET('templates/bills/show.html').respond('');
+  //   httpBackend.expectGET('templates/home.html').respond('');
+  // });
 
   it('fetches items from API and stores in the controller', function() {
     httpBackend.expectGET("http://localhost:3000/bills/1/items").respond(itemData);

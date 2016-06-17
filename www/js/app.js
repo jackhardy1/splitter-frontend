@@ -19,10 +19,15 @@ angular.module('splitter', ['ionic'])
       url: '/',
       templateUrl: 'templates/home.html',
   })
-    .state('bills', {
-      url: '/bills',
-      templateUrl: 'templates/bills.html',
+    .state('bills-show', {
+      url: '/bills/show',
+      templateUrl: 'templates/bills/show.html',
       controller: 'BillController as ctrl'
-  });
+  })
+  .state('bills-new', {
+    url: '/bills/new',
+    templateUrl: 'templates/bills/new.html',
+    controller: 'BillController as ctrl'
+});
   $urlRouterProvider.otherwise('/');
 });

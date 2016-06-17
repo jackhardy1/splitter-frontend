@@ -14,6 +14,7 @@ module.exports = function(config){
         'www/lib/ionic/js/ionic.js',
         'www/lib/ionic/js/ionic-angular.js',
 
+        'test/unit/testHelpers.js',
         'www/js/**/*.js',
         'test/unit/**/*.js'
 
