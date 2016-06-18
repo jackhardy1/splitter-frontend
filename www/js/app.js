@@ -1,4 +1,4 @@
-angular.module('splitter', ['ionic'])
+angular.module('splitter', ['ionic', 'ngCordova'])
 
 
 .run(function($ionicPlatform) {

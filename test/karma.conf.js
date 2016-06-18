@@ -9,12 +9,12 @@ module.exports = function(config){
         'www/lib/ionic/js/angular/angular-sanitize.js',
         'node_modules/angular-mocks/angular-mocks.js',
 
+
         'www/lib/ionic/js/angular/angular-resource.js',
         'www/lib/ionic/js/angular-ui/angular-ui-router.js',
         'www/lib/ionic/js/ionic.js',
         'www/lib/ionic/js/ionic-angular.js',
-
-        'test/unit/testHelpers.js',
+        'www/lib/ngCordova/dist/ng-cordova.js',
         'www/js/**/*.js',
         'test/unit/**/*.js'
 

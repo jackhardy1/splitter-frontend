@@ -6,15 +6,10 @@ describe('ItemService', function() {
   var id = 1;
 
   beforeEach(inject(function(_ItemService_, $httpBackend) {
+    mockRoutes($httpBackend);
     itemService = _ItemService_;
     httpBackend = $httpBackend;
   }));
-
-  // beforeEach(function(){
-  //   httpBackend.expectGET('templates/bills/new.html').respond('');
-  //   httpBackend.expectGET('templates/bills/show.html').respond('');
-  //   httpBackend.expectGET('templates/home.html').respond('');
-  // });
 
   it('fetches a list of items', function() {
     httpBackend.expectGET("http://localhost:3000/bills/1/items").respond(itemData);

@@ -6,16 +6,11 @@ describe('ItemController', function() {
   var id = 1;
 
   beforeEach(inject(function(_ItemService_, $controller, $httpBackend) {
+    mockRoutes($httpBackend);
     ctrl = $controller('ItemController');
     ItemService = _ItemService_;
     httpBackend = $httpBackend;
   }));
-
-  // beforeEach(function(){
-  //   httpBackend.expectGET('templates/bills/new.html').respond('');
-  //   httpBackend.expectGET('templates/bills/show.html').respond('');
-  //   httpBackend.expectGET('templates/home.html').respond('');
-  // });
 
   it('fetches items from API and stores in the controller', function() {
     httpBackend.expectGET("http://localhost:3000/bills/1/items").respond(itemData);

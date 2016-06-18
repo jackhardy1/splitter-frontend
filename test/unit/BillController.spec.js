@@ -5,21 +5,22 @@ describe('BillController', function() {
   var billData = [{event: "Party"}, {event: "Birthday"}];
 
   beforeEach(inject(function(_BillService_, $controller, $httpBackend) {
+    mockRoutes($httpBackend);
     ctrl = $controller('BillController');
     BillService = _BillService_;
     httpBackend = $httpBackend;
   }));
 
-  // beforeEach(function(){
-  //   httpBackend.expectGET('templates/bills/new.html').respond('');
-  //   httpBackend.expectGET('templates/bills/show.html').respond('');
-  //   httpBackend.expectGET('templates/home.html').respond('');
-  // });
-
   it('fetches bills from API and stores in the controller', function() {
-    httpBackend.expectGET("http://localhost:3000/bills/").respond(billData);
+    httpBackend.expectGET("http://localhost:3000/bills").respond(billData);
     ctrl.getBills();
     httpBackend.flush();
     expect(ctrl.bills).toEqual(billData);
+  });
+
+  it('sends bill image data', function(){
+    httpBackend.expectPOST("http://localhost:3000/bills").respond(billData);
+    ctrl.takePicture();
+    httpBackend.flush();
   });
 });
