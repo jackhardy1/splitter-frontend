@@ -1,12 +1,9 @@
-<ion-view view-title="Bills">
-  <ion-content>
-    <h1 class="title">Add a Bill</h1>
-    <a class="button icon button-full button-calm" href="/#/bills/new">Add a new bill</a>
-
-    <h2 class="title">Existing Bills</h2>
-    <ul class="list" ng-init="ctrl.getBills()">
-      <li class="bills item" ng-repeat="bill in ctrl.bills">
-        <a href="/#/bills/{{bill.id}}"><h3>{{bill.event}}</h3></a>
+<ion-view view-title="Show Bill">
+  <ion-content ng-init="ctrl.getItems(ctrl.currentId)">
+    <h1 id="title">Bill Items</h1>
+    <ul>
+      <li class="item" ng-repeat="item in ctrl.items">
+        {{ item.name }}  <input type="text" ng-model="item.price"></input>
       </li>
     </ul>
   </ion-content>

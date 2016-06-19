@@ -3,7 +3,7 @@ var mock = require('protractor-http-mock');
 beforeEach(function(){
   mock([{
     request: {
-      path: 'http://localhost:3000/bills/1/items',
+      path: 'http://splitter-backend.herokuapp.com/bills/1/items',
       method: 'GET'
     },
     response: {
@@ -12,7 +12,7 @@ beforeEach(function(){
   }]);
   mock([{
     request: {
-      path: 'http://localhost:3000/bills/',
+      path: 'http://splitter-backend.herokuapp.com/bills/bills/',
       method: 'GET'
     },
     response: {

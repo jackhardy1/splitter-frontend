@@ -12,14 +12,14 @@ describe('BillController', function() {
   }));
 
   it('fetches bills from API and stores in the controller', function() {
-    httpBackend.expectGET("http://localhost:3000/bills").respond(billData);
+    httpBackend.expectGET("http://splitter-backend.herokuapp.com/bills").respond(billData);
     ctrl.getBills();
     httpBackend.flush();
     expect(ctrl.bills).toEqual(billData);
   });
 
   it('sends bill image data', function(){
-    httpBackend.expectPOST("http://localhost:3000/bills").respond(billData);
+    httpBackend.expectPOST("http://splitter-backend.herokuapp.com/bills").respond(billData);
     ctrl.takePicture();
     httpBackend.flush();
   });

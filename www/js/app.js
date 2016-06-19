@@ -15,19 +15,29 @@ angular.module('splitter', ['ionic', 'ngCordova'])
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
-    .state('home', {
-      url: '/',
-      templateUrl: 'templates/home.html',
+  .state('home', {
+    url: '/',
+    templateUrl: 'templates/home.html',
   })
-    .state('bills-show', {
-      url: '/bills/show',
-      templateUrl: 'templates/bills/show.html',
-      controller: 'BillController as ctrl'
+  .state('bills-index', {
+    url: '/bills/index',
+    templateUrl: 'templates/bills/index.html',
+    controller: 'BillController as ctrl'
   })
   .state('bills-new', {
     url: '/bills/new',
     templateUrl: 'templates/bills/new.html',
     controller: 'BillController as ctrl'
-});
+  })
+  .state('bills-show', {
+    url: '/bills/:id',
+    templateUrl: 'templates/bills/show.html',
+    controller: 'ItemController as ctrl'
+  })
+  .state('bills-update', {
+    url: '/bills/update',
+    templateUrl: 'templates/bills/update.html',
+    controller: 'BillController as ctrl'
+  });
   $urlRouterProvider.otherwise('/');
 });
