@@ -13,7 +13,7 @@ describe('ItemController', function() {
   }));
 
   it('fetches items from API and stores in the controller', function() {
-    httpBackend.expectGET("http://localhost:3000/bills/1/items").respond(itemData);
+    httpBackend.expectGET("http://splitter-backend.herokuapp.com/bills/1/items").respond(itemData);
     ctrl.getItems(id);
     httpBackend.flush();
     expect(ctrl.items).toEqual(itemData);

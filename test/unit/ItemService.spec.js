@@ -12,7 +12,7 @@ describe('ItemService', function() {
   }));
 
   it('fetches a list of items', function() {
-    httpBackend.expectGET("http://localhost:3000/bills/1/items").respond(itemData);
+    httpBackend.expectGET("http://splitter-backend.herokuapp.com/bills/1/items").respond(itemData);
     itemService.getAll(id).then(function(items) {
       expect(items).toEqual(itemData);
     });

@@ -12,6 +12,6 @@ angular.module('splitter')
   };
 
   self.createBillImage = function(imageData) {
-    $http.post(billUrl, { image: imageData });
+    return $http.post(billUrl, { image: imageData });
   };
 }]);
