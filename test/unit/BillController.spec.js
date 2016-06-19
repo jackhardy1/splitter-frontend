@@ -4,9 +4,10 @@ describe('BillController', function() {
   var BillService, ctrl, httpBackend;
   var billData = [{event: "Party"}, {event: "Birthday"}];
 
-  beforeEach(inject(function(_BillService_, $controller, $httpBackend) {
+  beforeEach(inject(function($rootScope, _BillService_, $controller, $httpBackend) {
     mockRoutes($httpBackend);
-    ctrl = $controller('BillController');
+    scope = $rootScope.$new();
+    ctrl = $controller('BillController', {$scope: scope});
     BillService = _BillService_;
     httpBackend = $httpBackend;
   }));
@@ -16,11 +17,5 @@ describe('BillController', function() {
     ctrl.getBills();
     httpBackend.flush();
     expect(ctrl.bills).toEqual(billData);
-  });
-
-  it('sends bill image data', function(){
-    httpBackend.expectPOST("http://splitter-backend.herokuapp.com/bills").respond(billData);
-    ctrl.takePicture();
-    httpBackend.flush();
   });
 });
