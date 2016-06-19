@@ -19,5 +19,8 @@
     "www/lib",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "ngCordova": "^0.1.26-alpha"
+  }
 }

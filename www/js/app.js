@@ -1,9 +1,4 @@
-// Ionic Starter App
-
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-angular.module('splitter', ['ionic'])
+angular.module('splitter', ['ionic', 'ngCordova'])
 
 
 .run(function($ionicPlatform) {
@@ -16,4 +11,23 @@ angular.module('splitter', ['ionic'])
       StatusBar.styleDefault();
     }
   });
+})
+
+.config(function($stateProvider, $urlRouterProvider) {
+  $stateProvider
+    .state('home', {
+      url: '/',
+      templateUrl: 'templates/home.html',
+  })
+    .state('bills-show', {
+      url: '/bills/show',
+      templateUrl: 'templates/bills/show.html',
+      controller: 'BillController as ctrl'
+  })
+  .state('bills-new', {
+    url: '/bills/new',
+    templateUrl: 'templates/bills/new.html',
+    controller: 'BillController as ctrl'
+});
+  $urlRouterProvider.otherwise('/');
 });

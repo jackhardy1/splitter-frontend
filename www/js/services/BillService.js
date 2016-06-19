@@ -1,13 +1,17 @@
 angular.module('splitter')
        .service('BillService', ['$http', function($http) {
+
   var self = this;
+  var billUrl = 'http://splitter-backend.herokuapp.com/bills';
 
   self.getAll = function() {
-    var url = 'http://localhost:3000/bills/';
-
-    return $http.get(url)
+    return $http.get(billUrl)
     .then(function(response){
       return response.data;
     });
+  };
+
+  self.createBillImage = function(imageData) {
+    $http.post(billUrl, { image: imageData });
   };
 }]);

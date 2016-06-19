@@ -34,7 +34,8 @@
     "ionic-plugin-keyboard"
   ],
   "cordovaPlatforms": [
-    "ios"
+    "ios",
+    "android"
   ],
   "main": "gulpfile.js",
   "scripts": {
