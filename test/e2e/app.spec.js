@@ -12,7 +12,7 @@ beforeEach(function(){
   }]);
   mock([{
     request: {
-      path: 'http://splitter-backend.herokuapp.com/bills/bills/',
+      path: 'http://splitter-backend.herokuapp.com/bills',
       method: 'GET'
     },
     response: {
