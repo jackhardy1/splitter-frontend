@@ -23,26 +23,22 @@ angular.module('splitter', ['ionic', 'ngCordova', 'ng-token-auth'])
   .state('bills-index', {
     url: '/bills/index',
     templateUrl: 'templates/bills/index.html',
-    controller: 'BillController',
-    controllerAs: 'ctrl'
+    controller: 'BillController as ctrl'
   })
   .state('bills-new', {
     url: '/bills/new',
     templateUrl: 'templates/bills/new.html',
-    controller: 'BillController',
-    controllerAs: 'ctrl'
+    controller: 'BillController as ctrl'
   })
   .state('bills-show', {
     url: '/bills/:id',
     templateUrl: 'templates/bills/show.html',
-    controller: 'ItemController',
-    controllerAs: 'ctrl'
+    controller: 'ItemController as ctrl'
   })
   .state('bills-update', {
     url: '/bills/update',
     templateUrl: 'templates/bills/update.html',
-    controller: 'BillController',
-    controllerAs: 'ctrl'
+    controller: 'BillController as ctrl'
   })
   .state('users-new', {
       url: '/users/new',
