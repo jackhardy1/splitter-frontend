@@ -6,9 +6,7 @@ angular.module('splitter')
    $scope.handleRegBtnClick = function(registrationForm) {
      $auth.submitRegistration(registrationForm)
        .then(function(resp) {
-         console.log(resp.data.data.id);
          localStorage.setItem("userId",resp.data.data.id);
-         console.log(resp.data.data.email);
          localStorage.setItem("email",resp.data.data.email);
          $state.go('home');
      })
@@ -20,7 +18,8 @@ angular.module('splitter')
    $scope.handleLoginBtnClick = function(loginForm) {
      $auth.submitLogin(loginForm)
        .then(function(resp) {
-         localStorage.setItem("userId",resp.data.data.id);
+         localStorage.setItem("email", resp.uid);
+         localStorage.setItem("userId", resp.id);
          $state.go('home');
      })
      .catch(function(resp) {
