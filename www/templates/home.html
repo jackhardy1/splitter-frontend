@@ -1,11 +1,17 @@
 <ion-view view-title="Home">
   <ion-content>
-    <h1 id="title">Welcome to Splitter</h1>
-    <a id="my-bills" class="button icon button-full button-calm" href="#/bills/index">My Bills</a>
-    <a id="add-bills" class="button icon button-full button-calm" href="#/bills/new">Add a new bill</a>
-    <div>
-      <a class='button button-positive button-medium' ng-href="#/users/new">Sign up</a>
-      <a class='button button-positive button-medium' ng-href="#/users/log_in">Sign in</a>
+    <span id="title">Welcome to Splitter </span><span ng-show="isSignedIn()">{{getEmail()}}</span>
+
+    <div ng-show="isSignedIn()">
+      <a id="my-bills" class="button icon button-full button-calm" href="#/bills/index">My Bills</a>
+      <a id="add-bills" class="button icon button-full button-calm" href="#/bills/new">Add a new bill</a>
     </div>
+
+    <div>
+      <a  class='button button-positive button-medium' ng-href="#/users/new">Sign up</a>
+      <a class='button button-positive button-medium' ng-href="#/users/log_in">Sign in</a>
+      <a class="button button-positive button-medium" ng-click='handleSignOutBtnClick()'>Sign out</a>
+    </div>
+
   </ion-content>
 </ion-view>
