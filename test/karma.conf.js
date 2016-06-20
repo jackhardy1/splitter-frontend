@@ -8,7 +8,8 @@ module.exports = function(config){
         'www/lib/ionic/js/angular/angular-animate.js',
         'www/lib/ionic/js/angular/angular-sanitize.js',
         'node_modules/angular-mocks/angular-mocks.js',
-
+        'www/lib/angular-cookie/angular-cookie.js',
+        'www/lib/ng-token-auth/dist/ng-token-auth.js',
 
         'www/lib/ionic/js/angular/angular-resource.js',
         'www/lib/ionic/js/angular-ui/angular-ui-router.js',

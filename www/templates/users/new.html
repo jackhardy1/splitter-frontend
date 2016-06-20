@@ -1,0 +1,24 @@
+<ion-view class="bar-positive">
+  <ion-content>
+
+    <form ng-submit="handleRegBtnClick(registrationForm)" role="form" ng-init="registrationForm = {}">
+      <div class="form-group">
+        <label>email</label>
+        <input type="email" name="email" ng-model="registrationForm.email" required="required" class="form-control"/>
+      </div>
+
+      <div class="form-group">
+        <label>password</label>
+        <input type="password" name="password" ng-model="registrationForm.password" required="required" class="form-control"/>
+      </div>
+
+      <div class="form-group border-black">
+        <label>password confirmation</label>
+        <input type="password" name="password_confirmation" ng-model="registrationForm.password_confirmation" required="required" class="form-control"/>
+      </div>
+
+      <button type="submit" class="button button-block button-positive">Register</button>
+    </form>
+
+  </ion-content>
+</ion-view>
