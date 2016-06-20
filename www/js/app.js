@@ -1,4 +1,4 @@
-angular.module('splitter', ['ionic', 'ngCordova'])
+angular.module('splitter', ['ionic', 'ngCordova', 'ng-token-auth'])
 
 
 .run(function($ionicPlatform) {
@@ -13,31 +13,50 @@ angular.module('splitter', ['ionic', 'ngCordova'])
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $authProvider) {
   $stateProvider
   .state('home', {
     url: '/',
     templateUrl: 'templates/home.html',
+    controller: 'AuthController as ctrl'
   })
   .state('bills-index', {
     url: '/bills/index',
     templateUrl: 'templates/bills/index.html',
-    controller: 'BillController as ctrl'
+    controller: 'BillController',
+    controllerAs: 'ctrl'
   })
   .state('bills-new', {
     url: '/bills/new',
     templateUrl: 'templates/bills/new.html',
-    controller: 'BillController as ctrl'
+    controller: 'BillController',
+    controllerAs: 'ctrl'
   })
   .state('bills-show', {
     url: '/bills/:id',
     templateUrl: 'templates/bills/show.html',
-    controller: 'ItemController as ctrl'
+    controller: 'ItemController',
+    controllerAs: 'ctrl'
   })
   .state('bills-update', {
     url: '/bills/update',
     templateUrl: 'templates/bills/update.html',
-    controller: 'BillController as ctrl'
+    controller: 'BillController',
+    controllerAs: 'ctrl'
+  })
+  .state('users-new', {
+      url: '/users/new',
+      templateUrl: 'templates/users/new.html',
+    controller: 'AuthController as ctrl'
+    })
+    .state('users-log_in', {
+      url: '/users/log_in',
+      templateUrl: 'templates/users/login.html',
+    controller: 'AuthController as ctrl'
   });
   $urlRouterProvider.otherwise('/');
+
+  $authProvider.configure({
+    apiUrl: 'http://localhost:3000'
+  });
 });
