@@ -1,0 +1,10 @@
+<ion-view view-title="Bills">
+  <ion-content>
+    <h1 class="title">My Bills</h2>
+    <ul class="list" ng-init="ctrl.getBills()">
+      <li class="bills item" ng-repeat="bill in ctrl.bills">
+        <a href="/#/bills/{{bill.id}}"><h3>{{bill.event}}</h3></a>
+      </li>
+    </ul>
+  </ion-content>
+</ion-view>

@@ -11,12 +11,11 @@ angular.module('splitter')
     });
   }
 
-  $scope.takePicture = function() {
+  self.takePicture = function() {
     var options = {
       destinationType: Camera.DestinationType.DATA_URL,
       saveToPhotoAlbum: false,
       allowEdit: true,
-      quality: 40,
       encondingType: Camera.EncodingType.JPEG
     };
   $cordovaCamera.getPicture(options)
