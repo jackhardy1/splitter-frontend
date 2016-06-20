@@ -1,6 +1,8 @@
 function mockRoutes($httpBackend) {
   $httpBackend.whenGET('templates/bills/new.html').respond('');
   $httpBackend.whenGET('templates/bills/show.html').respond('');
+  $httpBackend.whenGET('templates/bills/update.html').respond('');
+  $httpBackend.whenGET('templates/bills/index.html').respond('');
   $httpBackend.whenGET('templates/home.html').respond('');
 }
 
