@@ -1,5 +1,5 @@
 angular.module('splitter')
-       .controller('BillController', ['BillService', '$cordovaCamera', '$scope', function(BillService, $cordovaCamera, $scope){
+       .controller('BillController', ['BillService', '$cordovaCamera', '$scope', '$state', function(BillService, $cordovaCamera, $scope,  $state){
 
   var self = this;
   self.getBills = getBills;
@@ -11,7 +11,7 @@ angular.module('splitter')
     });
   }
 
-  self.takePicture = function() {
+  self.takePicture = function(eventName) {
     var options = {
       destinationType: Camera.DestinationType.DATA_URL,
       saveToPhotoAlbum: false,
@@ -21,7 +21,9 @@ angular.module('splitter')
   $cordovaCamera.getPicture(options)
     .then(function(data) {
       var picture = 'data:image/jpeg;base64,' + data;
-      BillService.createBillImage(picture);
+      BillService.createBillImage(eventName, picture).then(function() {
+        $state.go('bills-index');
+      });
     });
 
   };

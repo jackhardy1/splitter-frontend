@@ -35,11 +35,6 @@ angular.module('splitter', ['ionic', 'ngCordova', 'ng-token-auth'])
     templateUrl: 'templates/bills/show.html',
     controller: 'ItemController as ctrl'
   })
-  .state('bills-update', {
-    url: '/bills/update',
-    templateUrl: 'templates/bills/update.html',
-    controller: 'BillController as ctrl'
-  })
   .state('users-new', {
       url: '/users/new',
       templateUrl: 'templates/users/new.html',

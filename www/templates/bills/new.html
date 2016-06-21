@@ -7,6 +7,8 @@
       <li>Make sure that the text is in line horizontally with the phone.</li>
       <li>Ensure the photo is well lit.</li>
     </ul>
-    <a ng-click="ctrl.takePicture()" id="take-photo" class="button icon button-full button-calm">Take Photo</a>
+    <h5>Event name</h5>
+    <input type="text" ng-model="eventName" required="required"/>
+    <a ng-click="ctrl.takePicture(eventName)" id="take-photo" class="button icon button-full button-calm">Take Photo</a>
   </ion-content>
 </ion-view>
