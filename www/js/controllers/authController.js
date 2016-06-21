@@ -3,6 +3,14 @@ angular.module('splitter')
 
    window.MY_SCOPE = $scope;
 
+    $scope.getEmail = function() {
+     return localStorage.getItem("email");
+    };
+
+    $scope.isSignedIn = function(){
+      return $scope.getEmail() !== "null";
+    };
+
    $scope.handleRegBtnClick = function(registrationForm) {
      $auth.submitRegistration(registrationForm)
        .then(function(resp) {
@@ -18,9 +26,9 @@ angular.module('splitter')
    $scope.handleLoginBtnClick = function(loginForm) {
      $auth.submitLogin(loginForm)
        .then(function(resp) {
-         localStorage.setItem("email", resp.uid);
-         localStorage.setItem("userId", resp.id);
-         $state.go('home');
+         localStorage.setItem("userId",resp.id);
+         localStorage.setItem("email",resp.email);
+        $state.go('home');
      })
      .catch(function(resp) {
        alert("error!");
@@ -29,13 +37,13 @@ angular.module('splitter')
 
    $scope.handleSignOutBtnClick = function() {
      $auth.signOut()
-     .then(function(resp) {
-       localStorage.setItem("userId",null);
-       $state.go('home');
-     // handle success response
-     })
-     .catch(function(resp) {
-       alert("error!");
-     });
+       .then(function(resp) {
+         localStorage.setItem("email",null);
+         $state.go('home');
+      //  handle success response
+       })
+       .catch(function(resp) {
+         alert("error!");
+       });
    };
  });
