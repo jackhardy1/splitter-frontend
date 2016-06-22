@@ -11,8 +11,7 @@ angular.module('splitter')
     });
   };
 
-  self.createBillImage = function(imageData) {
-    // var userId = parseInt(localStorage.getItem("userId"));
-    return $http.post(billUrl, { image: imageData  });
+  self.createBillImage = function(eventName, imageData) {
+    return $http.post(billUrl, { event: eventName, image: imageData  });
   };
 }]);
