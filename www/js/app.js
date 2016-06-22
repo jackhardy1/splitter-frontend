@@ -58,6 +58,6 @@ angular.module('splitter', ['ionic', 'ngCordova', 'ng-token-auth'])
   $urlRouterProvider.otherwise('/');
 
   $authProvider.configure({
-    apiUrl: 'http://localhost:3000'
+    apiUrl: 'http://splitter-backend.herokuapp.com'
   });
 });
