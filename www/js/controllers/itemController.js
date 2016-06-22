@@ -13,7 +13,7 @@ angular.module('splitter')
     ItemService.getAll(id)
     .then(function(response){
       self.items = response;
-    }); 
+    });
   }
 
   function removeItem(itemId) {
