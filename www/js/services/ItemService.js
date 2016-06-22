@@ -9,4 +9,20 @@ angular.module('splitter')
       return response.data;
     });
   };
+
+  self.removeItem = function(billId, itemId){
+    var url = 'http://splitter-backend.herokuapp.com/bills/' + billId +  '/items/' + itemId ;
+    return $http.delete(url);
+  };
+
+  self.editItem = function(billId, itemId, params) {
+    var url = 'http://splitter-backend.herokuapp.com/bills/' + billId +  '/items/' + itemId ;
+    return $http.patch(url, {item: params});
+  };
+
+  self.addItem = function(billId, params) {
+    var url = 'http://splitter-backend.herokuapp.com/bills/' + billId +  '/items/';
+    return $http.post(url, {item: params, bill_id: billId});
+  };
+
 }]);
