@@ -1,0 +1,32 @@
+<div>
+    <table class="table">
+        <tr>
+            <th>Description</th>
+            <th>Qty</th>
+            <th>Cost</th>
+            <th>Total</th>
+            <th></th>
+        </tr>
+        <tr >
+          <div class="item" ng-repeat="item in ctrl.items">
+            {{ item.name }}  <input type="text" ng-model="item.price"></input>
+            [<a href ng-click="ctrl.removeItem( {{item.id}} )">X</a>]
+            <button id="remove-item" ng-click="ctrl.removeItem( {{item.id}} )">Delete Item</button> -->
+            <!-- <button id="edit-item" ng-click="ctrl.triggerModal1( {{item.id}} )">Edit Item</button>
+          </div>
+            <td><input type="text" ng-model="item.name"></td>
+            <td><input type="number" ng-model="item.quantity" ng-required ></td>
+            <td><input type="number" ng-model="item.price" ng-required ></td>
+            <td>{{item.qty * item.cost | currency}}</td>
+            <td>
+                [<a href ng-click="removeItem($index)">X</a>]
+            </td>
+        </tr>
+        <tr>
+            <td><a href ng-click="addItem()">add item</a></td>
+            <td></td>
+            <td>Total:</td>
+            <td>{{total() | currency}}</td>
+        </tr>
+    </table>
+</div>

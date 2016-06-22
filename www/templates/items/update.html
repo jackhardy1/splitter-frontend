@@ -1,0 +1,20 @@
+<ion-modal-view view-title="Show Bill">
+  <ion-content>
+    <h1 id="title">Edit page</h1>
+      <form class="list" ng-submit="ctrl.editItem(itemId,item)">
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Name</span>
+          <input ng-model="item.name" type="text" placeholder="{{item.name}}">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Price</span>
+          <input ng-model="item.price" type="text" placeholder="{{item.price}}">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Quantity</span>
+          <input ng-model="item.quantity" type="text" placeholder="{{item.quantity}}">
+        </label>
+        <button type="submit">Submit</button>
+      </form>
+  </ion-content>
+</ion-modal-view>
