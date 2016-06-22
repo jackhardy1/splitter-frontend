@@ -1,6 +1,5 @@
 angular.module('splitter', ['ionic', 'ngCordova', 'ng-token-auth'])
 
-
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -44,12 +43,18 @@ angular.module('splitter', ['ionic', 'ngCordova', 'ng-token-auth'])
       url: '/users/new',
       templateUrl: 'templates/users/new.html',
     controller: 'AuthController as ctrl'
-    })
-    .state('users-log_in', {
+  })
+  .state('users-log_in', {
       url: '/users/log_in',
       templateUrl: 'templates/users/login.html',
     controller: 'AuthController as ctrl'
+  })
+    .state('items-update', {
+        url: '/bills/:bill_id/items/:id/update',
+        templateUrl: 'templates/items/update.html',
+      controller: 'ItemController as ctrl'
   });
+
   $urlRouterProvider.otherwise('/');
 
   $authProvider.configure({

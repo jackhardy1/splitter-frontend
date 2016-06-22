@@ -18,6 +18,7 @@ angular.module('splitter')
       allowEdit: true,
       encondingType: Camera.EncodingType.JPEG
     };
+
   $cordovaCamera.getPicture(options)
     .then(function(data) {
       var picture = 'data:image/jpeg;base64,' + data;
