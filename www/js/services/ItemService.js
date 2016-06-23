@@ -2,7 +2,35 @@ angular.module('splitter')
        .service('ItemService', ['$http', function($http) {
   var self = this;
 
+  self.sendEmail = function(billId) {
+    emailUrl = 'http://splitter-backend.herokuapp.com/bills/mailer';
+    $http.post(emailUrl,  { bill_id: billId } );
+  };
+
   self.getAll = function(id) {
+    var url = 'http://splitter-backend.herokuapp.com/bills/' + id + '/items';
+    return $http.get(url)
+    .then(function(response){
+      self.seperateItems(response.data);
+    });
+  };
+
+  self.seperateItems = function(items) {
+    items.forEach(function(item){
+      if(item.quantity > 1) {
+        var quantity = item.quantity;
+        for(i=0; i < quantity; i++ ){
+          price = (item.price)/quantity;
+          params = {name: item.name, price: price, quantity: 1, contact: item.contact};
+          self.addItem(item.bill_id, params);
+        }
+        self.removeItem(item.bill_id, item.id);
+      }
+    });
+     self.getAllItems(items[0].bill_id);
+  };
+
+  self.getAllItems = function(id) {
     var url = 'http://splitter-backend.herokuapp.com/bills/' + id + '/items';
     return $http.get(url)
     .then(function(response){
@@ -10,19 +38,29 @@ angular.module('splitter')
     });
   };
 
+
   self.removeItem = function(billId, itemId){
     var url = 'http://splitter-backend.herokuapp.com/bills/' + billId +  '/items/' + itemId ;
-    return $http.delete(url);
+    return $http.delete(url)
+    .then(function(){
+      self.getAll(billId);
+    });
   };
 
   self.editItem = function(billId, itemId, params) {
     var url = 'http://splitter-backend.herokuapp.com/bills/' + billId +  '/items/' + itemId ;
-    return $http.patch(url, {item: params});
+    return $http.patch(url, {item: params})
+    .then(function(){
+      self.getAll(billId);
+    });
   };
 
   self.addItem = function(billId, params) {
     var url = 'http://splitter-backend.herokuapp.com/bills/' + billId +  '/items/';
-    return $http.post(url, {item: params, bill_id: billId});
+    return $http.post(url, {item: params, bill_id: billId})
+    .then(function(){
+      self.getAll(billId);
+    });
   };
 
 }]);

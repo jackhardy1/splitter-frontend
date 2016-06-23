@@ -6,14 +6,37 @@ angular.module('splitter')
  self.removeItem = removeItem;
  self.editItem = editItem;
  self.addItem = addItem;
-
+ self.getBillTotal = getBillTotal;
+ self.sendEmail = sendEmail;
+ self.addEmail = addEmail;
  self.currentId = $stateParams.id;
 
+ function addEmail(email, array) {
+  var checkboxes = document.getElementsByClassName("selectedItem");
+  var checkboxesChecked = [];
+  for (var i=0; i<checkboxes.length; i++) {
+    if (checkboxes[i].checked) {
+       checkboxesChecked.push(checkboxes[i]);
+    }
+  }
+  params = {contact: email};
+  var response = checkboxesChecked.length > 0 ? checkboxesChecked : null;
+  response.forEach(function(item){
+    editItem(item.value, params);
+  });
+ }
+
   function getItems(id) {
-    ItemService.getAll(id)
+    ItemService.getAllItems(id)
     .then(function(response){
       self.items = response;
+      getBillTotal();
     });
+  }
+
+  function sendEmail() {
+    var billId = $stateParams.id;
+    ItemService.sendEmail(billId);
   }
 
   function removeItem(itemId) {
@@ -33,13 +56,20 @@ angular.module('splitter')
     });
   }
 
-  function addItem(itemId, params) {
+  function addItem(params) {
     $scope.closeModalB();
     var billId = $stateParams.id;
     ItemService.addItem(billId, params)
     .then(function(){
       getItems(billId);
     });
+  }
+
+  function getBillTotal() {
+    self.billTotal = 0;
+    self.items.forEach(function(item){
+      self.billTotal += item.price;
+   });
   }
 
     $ionicModal.fromTemplateUrl('templates/items/update.html', {
@@ -57,7 +87,6 @@ angular.module('splitter')
     $scope.closeModalA = function() {
       $scope.modalA.hide();
     };
-
 
     $ionicModal.fromTemplateUrl('templates/items/new.html', {
        scope: $scope,

@@ -16,7 +16,7 @@ describe('BillService', function() {
     it('fetches a list of Bills', function(){
       var bill1 = { event: "Party"};
       var bill2 = { event: "Birthday"};
-      httpBackend.expectGET("http://splitter-backend.herokuapp.com/bills").respond(billData);
+      httpBackend.expectGET("http://splitter-backend.herokuapp.com/bills/").respond(billData);
       billService.getAll().then(function(bills) {
         expect(bills).toEqual([bill1, bill2]);
       });
@@ -26,7 +26,7 @@ describe('BillService', function() {
 
   describe('#createBillImage', function(){
     it('posts bill image data to the API', function(){
-      httpBackend.expectPOST('http://splitter-backend.herokuapp.com/bills').respond(201);
+      httpBackend.expectPOST('http://splitter-backend.herokuapp.com/bills/').respond(201);
       billService.createBillImage(image).then(function(response) {
         expect(response.status).toEqual(201);
       });

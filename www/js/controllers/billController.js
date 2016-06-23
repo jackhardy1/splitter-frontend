@@ -11,6 +11,9 @@ angular.module('splitter')
     });
   }
 
+
+
+
   self.takePicture = function(eventName) {
     var options = {
       destinationType: Camera.DestinationType.DATA_URL,

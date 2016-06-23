@@ -23,7 +23,7 @@ describe('ItemController', function() {
     expect(ctrl.items).toEqual(itemData);
   });
 
-  it('removes an item from the list', function(){
+  xit('removes an item from the list', function(){
     httpBackend.expectDELETE("http://splitter-backend.herokuapp.com/bills/1/items/1").respond(200);
     httpBackend.expectGET("http://splitter-backend.herokuapp.com/bills/1/items").respond(deletedItemData);
     ctrl.items = itemData;
