@@ -12,6 +12,8 @@ angular.module('splitter')
  self.currentId = $stateParams.id;
 
  function addEmail(email, array) {
+   console.log(email);
+   console.log(array);
   var checkboxes = document.getElementsByClassName("selectedItem");
   var checkboxesChecked = [];
   for (var i=0; i<checkboxes.length; i++) {

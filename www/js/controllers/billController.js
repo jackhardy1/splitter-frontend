@@ -3,18 +3,20 @@ angular.module('splitter')
 
   var self = this;
   self.getBills = getBills;
+  self.getCurrentId = getCurrentId;
+  self.takePicture = takePicture;
 
   function getBills() {
-    BillService.getAll()
-    .then(function(response){
+    BillService.getAll().then(function(response){
       self.bills = response;
     });
   }
 
+  function getCurrentId(){
+    return parseInt(localStorage.getItem("userId"));
+  }
 
-
-
-  self.takePicture = function(eventName) {
+  function takePicture(eventName) {
     var options = {
       destinationType: Camera.DestinationType.DATA_URL,
       saveToPhotoAlbum: false,
@@ -29,9 +31,5 @@ angular.module('splitter')
         $state.go('bills-index');
       });
     });
-
-  };
-
-
-
+  }
 }]);

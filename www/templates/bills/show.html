@@ -5,19 +5,19 @@
           <li class="item" ng-repeat="item in ctrl.items | filter: {contact: null}">
             <input type="checkbox"  class="selectedItem" ng-model="selectedItems" value="{{item.id}}">
             Name: {{ item.name  }}
-             / Price: {{ item.price }}
+             / Quantity: {{ item.quantity }}
+             / Total Price: {{ item.price }}
             <button id="remove-item" ng-click="ctrl.removeItem( {{item.id}} )">Delete Item</button>
             <button id="edit-item" ng-click="openModalA(item.id)">Edit Item</button>
           </li>
           <button id="add-item"  ng-click="openModalB(item.id)">Add Item</button>
-          <label>
-            <input class="item-input" ng-model="email" type="email" name="email" placeholder="Email Address Here">
-            <button id="assign-email" ng-click="ctrl.addEmail(email, selectedItems)">Assign Items To Email Address</button>
-          </label>
+          <div>
+            <input class="item-input" ng-model="email" type="email" name="email" placeholder="Assign checked items to this email">
+            <button id="assign-email" ng-click="ctrl.addEmail(email, selectedItems)">Assign Items</button>
+          </div>
+        </select>
         </ul>
-        <div class="">
           Bill Total: {{ ctrl.billTotal }}
-        </div>
-          <button ng-click="ctrl.sendEmail()">Send Payment Request</button>
+          <button ng-click="ctrl.sendEmail()">Send payment request</button>
       </ion-content>
     </ion-view>
