@@ -13,7 +13,6 @@ angular.module('splitter')
     });
   }
 
-
   function createBillImage(eventName, imageData) {
     var userId = parseInt(localStorage.getItem("userId"));
     return $http.post(billUrl, { event: eventName, image: imageData, user_id: userId });

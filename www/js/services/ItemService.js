@@ -2,25 +2,29 @@ angular.module('splitter')
        .service('ItemService', ['$http', function($http) {
 
   var self = this;
-  // self.getAll = getAll;
   self.removeItem = removeItem;
   self.editItem = editItem;
   self.addItem = addItem;
+  self.sendEmail = sendEmail;
+  self.getAll = getAll;
+  self.seperateItems = seperateItems;
+  self.getAllItems = getAllItems;
 
-  self.sendEmail = function(billId) {
+  function sendEmail(billId) {
     emailUrl = 'http://splitter-backend.herokuapp.com/bills/mailer';
+    console.log(billId);
     $http.post(emailUrl,  { bill_id: billId } );
-  };
+  }
 
-  self.getAll = function(id) {
+  function getAll(id) {
     var url = 'http://splitter-backend.herokuapp.com/bills/' + id + '/items';
     return $http.get(url)
     .then(function(response){
       self.seperateItems(response.data);
     });
-  };
+  }
 
-  self.seperateItems = function(items) {
+  function seperateItems(items) {
     items.forEach(function(item){
       if(item.quantity > 1) {
         var quantity = item.quantity;
@@ -33,17 +37,15 @@ angular.module('splitter')
       }
     });
      self.getAllItems(items[0].bill_id);
-  };
+  }
 
-  self.getAllItems = function(id) {
+  function getAllItems(id) {
     var url = 'http://splitter-backend.herokuapp.com/bills/' + id + '/items';
     return $http.get(url)
     .then(function(response){
       return response.data;
     });
-  };
-
-
+  }
 
   function removeItem(billId, itemId){
     var url = 'http://splitter-backend.herokuapp.com/bills/' + billId +  '/items/' + itemId ;
@@ -65,6 +67,4 @@ angular.module('splitter')
       self.getAll(billId);
     });
   }
-
-
 }]);
