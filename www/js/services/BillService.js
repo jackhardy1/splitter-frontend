@@ -2,7 +2,8 @@ angular.module('splitter')
        .service('BillService', ['$http', function($http) {
 
   var self = this;
-  var billUrl = 'http://splitter-backend.herokuapp.com/bills';
+
+  var billUrl = 'http://splitter-backend.herokuapp.com/bills/';
   self.getAll = getAll;
   self.createBillImage = createBillImage;
 
@@ -11,6 +12,7 @@ angular.module('splitter')
       return response.data;
     });
   }
+
 
   function createBillImage(eventName, imageData) {
     var userId = parseInt(localStorage.getItem("userId"));

@@ -13,7 +13,7 @@ describe('BillController', function() {
   }));
 
   it('fetches bills from API and stores in the controller', function() {
-    httpBackend.expectGET("http://splitter-backend.herokuapp.com/bills").respond(billData);
+    httpBackend.expectGET("http://splitter-backend.herokuapp.com/bills/").respond(billData);
     ctrl.getBills();
     httpBackend.flush();
     expect(ctrl.bills).toEqual(billData);

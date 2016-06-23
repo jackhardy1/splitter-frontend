@@ -2,17 +2,48 @@ angular.module('splitter')
        .service('ItemService', ['$http', function($http) {
 
   var self = this;
-  self.getAll = getAll;
+  // self.getAll = getAll;
   self.removeItem = removeItem;
   self.editItem = editItem;
   self.addItem = addItem;
 
-  function getAll(id) {
+  self.sendEmail = function(billId) {
+    emailUrl = 'http://splitter-backend.herokuapp.com/bills/mailer';
+    $http.post(emailUrl,  { bill_id: billId } );
+  };
+
+  self.getAll = function(id) {
     var url = 'http://splitter-backend.herokuapp.com/bills/' + id + '/items';
-    return $http.get(url).then(function(response){
+    return $http.get(url)
+    .then(function(response){
+      self.seperateItems(response.data);
+    });
+  };
+
+  self.seperateItems = function(items) {
+    items.forEach(function(item){
+      if(item.quantity > 1) {
+        var quantity = item.quantity;
+        for(i=0; i < quantity; i++ ){
+          price = (item.price)/quantity;
+          params = {name: item.name, price: price, quantity: 1, contact: item.contact};
+          self.addItem(item.bill_id, params);
+        }
+        self.removeItem(item.bill_id, item.id);
+      }
+    });
+     self.getAllItems(items[0].bill_id);
+  };
+
+  self.getAllItems = function(id) {
+    var url = 'http://splitter-backend.herokuapp.com/bills/' + id + '/items';
+    return $http.get(url)
+    .then(function(response){
       return response.data;
     });
-  }
+  };
+
+
 
   function removeItem(billId, itemId){
     var url = 'http://splitter-backend.herokuapp.com/bills/' + billId +  '/items/' + itemId ;
@@ -21,12 +52,19 @@ angular.module('splitter')
 
   function editItem(billId, itemId, params) {
     var url = 'http://splitter-backend.herokuapp.com/bills/' + billId +  '/items/' + itemId ;
-    return $http.patch(url, {item: params});
+    return $http.patch(url, {item: params})
+    .then(function(){
+      self.getAll(billId);
+    });
   }
 
   function addItem(billId, params) {
     var url = 'http://splitter-backend.herokuapp.com/bills/' + billId +  '/items/';
-    return $http.post(url, {item: params, bill_id: billId});
+    return $http.post(url, {item: params, bill_id: billId})
+    .then(function(){
+      self.getAll(billId);
+    });
   }
+
 
 }]);
