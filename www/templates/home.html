@@ -1,16 +1,21 @@
 <ion-view view-title="Home">
-  <ion-content>
-    <span id="title">Welcome to Splitter </span><span ng-show="isSignedIn()">{{getEmail()}}</span>
+  <ion-content class="bg">
 
+    <p class="title-font2 shadow--basic">splitter</p>
+    <img src="img/splitter_logo.png" class="logo">
     <div ng-show="isSignedIn()">
-      <a id="my-bills" class="button icon button-full button-calm" href="#/bills/index">My Bills</a>
-      <a id="add-bills" class="button icon button-full button-calm" href="#/bills/new">Add a new bill</a>
+      <p class="title" id="title"><b>Welcome {{getEmail()}} </b></p>
+      <a id="my-bills" class="button icon button-full button-stable " href="#/bills/index"><b>My Bills</b></a>
+      <a id="add-bills" class="button icon button-full button-stable" href="#/bills/new"><b>Add a new bill</b></a>
     </div>
 
-    <div>
-      <a class='button button-positive button-medium' ng-href="#/users/new">Sign up</a>
-      <a class='button button-positive button-medium' ng-href="#/users/log_in">Sign in</a>
-      <a class="button button-positive button-medium" ng-click='handleSignOutBtnClick()'>Sign out</a>
+    <div ng-hide="isSignedIn()">
+      <a class='button button-positive button-full' ng-href="#/users/new">sign up</a>
+      <a class='button button-positive button-full' ng-href="#/users/log_in">sign in</a>
+    </div>
+
+    <div ng-show="isSignedIn()">
+      <a class="button button-dark button-full bottom-button" ng-click='handleSignOutBtnClick()'>Sign out</a>
     </div>
 
   </ion-content>

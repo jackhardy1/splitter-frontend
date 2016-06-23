@@ -1,1 +1,128 @@
 /* Empty. Add your own CSS if you like */
+
+.bills {
+    top: 32px;
+    bottom: 49px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.bar-header {
+  padding-bottom: 60px;
+}
+
+.list {
+  text-align: center;
+}
+
+.bg {
+  background-image: url("/img/Light-Wood-Background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+}
+
+.logo {
+  width:200px;
+  height: auto;
+  padding-top: 20px;
+  -webkit-filter: drop-shadow(3px 3px 3px #424242);
+}
+
+.logo-small {
+  width:40px;
+  height: auto;
+}
+
+.margin-box {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.inputbox {
+  width: 100%;
+}
+
+.basic {
+  font-size: 30px;
+  color: blue;
+}
+
+.title {
+  text-align: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.title-font2 {
+  font-family: 'Varela Round', sans-serif;
+  font-size: 55px;
+  font-weight: bold;
+  letter-spacing:0.1em;
+  text-align: center;
+  padding: 80px 0px 10px 0px;
+  color: #2b2b2b;
+  text-shadow: 1px 1px 0px #000000, 4px 4px 0px rgba(0,0,0,0.50);
+  color: white;
+}
+
+.title-font3 {
+  font-family: 'Varela Round', sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  letter-spacing:0.1em;
+  text-align: center;
+  padding: 20px 0px 40px 0px;
+  color: black;
+  text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0,0,0,0.15);
+}
+
+.title-font4 {
+  font-family: 'Varela Round', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing:0.0em;
+  text-align: center;
+  color: white;
+}
+
+.title-font5 {
+  font-family: 'Varela Round', sans-serif;
+  font-size: 30px;
+}
+
+.shadow1 {
+  color: #2b2b2b;
+  text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0,0,0,0.15);
+}
+
+.shadow--basic {
+  text-shadow: 0 1px 0 #ccc,
+                 0 2px 0 #c9c9c9,
+                 0 3px 0 #bbb,
+                 0 4px 0 #b9b9b9,
+                 0 5px 0 #aaa,
+                 0 6px 1px rgba(0,0,0,.1),
+                 0 0 5px rgba(0,0,0,.1),
+                 0 1px 3px rgba(0,0,0,.3),
+                 0 3px 5px rgba(0,0,0,.2),
+                 0 5px 10px rgba(0,0,0,.25),
+                 0 10px 10px rgba(0,0,0,.2),
+                 0 20px 20px rgba(0,0,0,.15);
+}
+
+
+ion-content {
+  text-align: center;
+}
+
+.bar-stable {
+  text-align: center;
+}
+
+img {
+  text-align: center;
+}

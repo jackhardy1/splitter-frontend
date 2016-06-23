@@ -1,19 +1,23 @@
 <ion-view class="bar-positive">
-  <ion-content>
+  <ion-content class="bg">
 
-  <form ng-submit="handleLoginBtnClick(loginForm)" role="form" ng-init="loginForm = {}">
-    <div class="form-group">
-      <label>email</label>
-      <input type="email" name="email" ng-model="loginForm.email" required="required" class="form-control"/>
-    </div>
+    <img src="img/splitter_logo.png" class="logo">
+    <p class="title-font3"> sign in </p>
+    <form ng-submit="handleLoginBtnClick(loginForm)" role="form" ng-init="loginForm = {}">
+      <div class="form-group margin-box">
+        <label class="item item-input">
+        <input type="email" placeholder="E-mail" name="email" ng-model="loginForm.email" required="required" class="form-control"/>
+        </label>
+      </div>
 
-    <div class="form-group">
-      <label>password</label>
-      <input type="password" name="password" ng-model="loginForm.password" required="required" class="form-control"/>
-    </div>
+      <div class="form-group margin-box">
+        <label class="item item-input">
+        <input type="password" placeholder="Password" name="password" ng-model="loginForm.password" required="required" class="form-control"/>
+        </label>
+      </div>
 
-    <button type="submit" class="btn btn-primary btn-lg">Sign in</button>
-  </form>
-
+      <p class="margin-box"><button type="submit" class="button button-block button-dark"><b>Submit</b></button></p>
+    </form>
   </ion-content>
+
 </ion-view>
