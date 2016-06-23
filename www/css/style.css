@@ -26,15 +26,22 @@ a {
 }
 
 .logo {
-  width:200px;
+  width:180px;
   height: auto;
-  padding-top: 20px;
+  padding: 15px 0px 5px 0px;
   -webkit-filter: drop-shadow(3px 3px 3px #424242);
 }
 
 .logo-small {
-  width:40px;
+  width:50px;
   height: auto;
+  -webkit-filter: drop-shadow(1px 1px 1px #424242);
+}
+
+.logo-smaller {
+  width:35px;
+  height: auto;
+  -webkit-filter: drop-shadow(1px 1px 1px #424242);
 }
 
 .margin-box {
@@ -55,29 +62,36 @@ a {
   text-align: center;
   padding-top: 3px;
   padding-bottom: 3px;
+  font-size: 20px;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+}
+
+.title2 {
+  font-size: 15px;
 }
 
 .title-font2 {
-  font-family: 'Varela Round', sans-serif;
-  font-size: 55px;
+  font-family: 'Special Elite', cursive;
+  font-size: 50px;
   font-weight: bold;
   letter-spacing:0.1em;
   text-align: center;
-  padding: 80px 0px 10px 0px;
+  padding: 100px 0px 0px 0px;
   color: #2b2b2b;
-  text-shadow: 1px 1px 0px #000000, 4px 4px 0px rgba(0,0,0,0.50);
-  color: white;
+  text-shadow: 3px 3px 3px rgba(0,0,0,0.2);
+  color: black;
 }
 
 .title-font3 {
   font-family: 'Varela Round', sans-serif;
-  font-size: 50px;
+  font-size: 45px;
   font-weight: bold;
   letter-spacing:0.1em;
   text-align: center;
   padding: 20px 0px 40px 0px;
   color: black;
-  text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0,0,0,0.15);
+  text-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+
 }
 
 .title-font4 {
@@ -89,34 +103,27 @@ a {
   color: white;
 }
 
-.title-font5 {
+.instructions-text {
   font-family: 'Varela Round', sans-serif;
-  font-size: 30px;
+  font-size: 18px;
+}
+
+.event-name-text {
+  font-family: 'Varela Round', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 15px 0px 5px 0px;
 }
 
 .shadow1 {
-  color: #2b2b2b;
-  text-shadow: 1px 1px 0px #ededed, 4px 4px 0px rgba(0,0,0,0.15);
+  text-shadow: 2px 2px 2px rgba(255,255,255,0.4);
 }
 
-.shadow--basic {
-  text-shadow: 0 1px 0 #ccc,
-                 0 2px 0 #c9c9c9,
-                 0 3px 0 #bbb,
-                 0 4px 0 #b9b9b9,
-                 0 5px 0 #aaa,
-                 0 6px 1px rgba(0,0,0,.1),
-                 0 0 5px rgba(0,0,0,.1),
-                 0 1px 3px rgba(0,0,0,.3),
-                 0 3px 5px rgba(0,0,0,.2),
-                 0 5px 10px rgba(0,0,0,.25),
-                 0 10px 10px rgba(0,0,0,.2),
-                 0 20px 20px rgba(0,0,0,.15);
-}
-
-
-ion-content {
-  text-align: center;
+.box {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 5px 5px 1px 5px;
+  border-radius: 15px;
+  margin: 0px 30px 0px 30px;
 }
 
 .bar-stable {
@@ -125,4 +132,33 @@ ion-content {
 
 img {
   text-align: center;
+}
+
+.item-input {
+  width: 97%;
+  margin-left: 4px;
+  border-radius: 12px;
+}
+
+h3 {
+  margin: 0px 20px 15px 20px;
+  text-shadow: 2px 2px 2px rgba(255,255,255,0.3);
+}
+
+.container1 {
+  margin-top: 20px;
+}
+
+.backbutton {
+    padding: 10px 0px 0px 10px;
+}
+.ion-ios-arrow-back {
+  font-size: 30px;
+  text-decoration: none;
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+}
+
+.ion-ios-list-outline {
+  vertical-align: sub;
+  font-size: 30px;
 }
