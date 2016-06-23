@@ -1,20 +1,23 @@
-<ion-view view-title="Show Bill">
-  <ion-content ng-init="ctrl.getItems(ctrl.currentId)">
-    <h1 id="title">Bill Items</h1>
-    <ul>
-      <li class="item" ng-repeat="item in ctrl.items">
-        Name: {{ item.name }}
-        Price: {{ item.price }}
-        <button id="remove-item" ng-click="ctrl.removeItem( {{item.id}} )">Delete Item</button>
-        <button id="edit-item" ng-click="openModalA(item.id)">Edit Item</button>
-      </li>
-      <button id="add-item"  ng-click="openModalB(item.id)">Add Item</button>
-        Bill Total: {{item.bill.total}}
-    </ul>
-    <div ng-controller="BillController as ctrl">
-      <div ng-init>
-    </div>
-    </div>
-
-  </ion-content>
-</ion-view>
+    <ion-view view-title="Show Bill">
+      <ion-content ng-init="ctrl.getItems(ctrl.currentId)">
+        <h1 id="title">Bill Items</h1>
+        <ul>
+          <li class="item" ng-repeat="item in ctrl.items | filter: {contact: null}">
+            <input type="checkbox"  class="selectedItem" ng-model="selectedItems" value="{{item.id}}">
+            Name: {{ item.name  }}
+             / Quantity: {{ item.quantity }}
+             / Total Price: {{ item.price }}
+            <button id="remove-item" ng-click="ctrl.removeItem( {{item.id}} )">Delete Item</button>
+            <button id="edit-item" ng-click="openModalA(item.id)">Edit Item</button>
+          </li>
+          <button id="add-item"  ng-click="openModalB(item.id)">Add Item</button>
+          <div>
+            <input class="item-input" ng-model="email" type="email" name="email" placeholder="Assign checked items to this email">
+            <button id="assign-email" ng-click="ctrl.addEmail(email, selectedItems)">Assign Items</button>
+          </div>
+        </select>
+        </ul>
+          Bill Total: {{ ctrl.billTotal }}
+          <button ng-click="ctrl.sendEmail()">Send payment request</button>
+      </ion-content>
+    </ion-view>

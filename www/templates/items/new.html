@@ -1,18 +1,14 @@
 <ion-modal-view view-title="New Item">
   <ion-content>
     <h1 id="title">Add Item</h1>
-      <form class="list" ng-submit="ctrl.addItem(itemId,item)">
+      <form class="list" ng-submit="ctrl.addItem(item)">
         <label class="item item-input item-stacked-label">
           <span class="input-label">Name</span>
-          <input ng-model="item.name" type="text" placeholder="{{item.name}}">
+          <input ng-model="item.name" type="text">
         </label>
         <label class="item item-input item-stacked-label">
           <span class="input-label">Price</span>
-          <input ng-model="item.price" type="text" placeholder="{{item.price}}">
-        </label>
-        <label class="item item-input item-stacked-label">
-          <span class="input-label">Quantity</span>
-          <input ng-model="item.quantity" type="text" placeholder="{{item.quantity}}">
+          <input ng-model="item.price" type="text">
         </label>
         <button type="submit">Submit</button>
       </form>
