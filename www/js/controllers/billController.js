@@ -3,6 +3,7 @@ angular.module('splitter')
 
   var self = this;
   self.getBills = getBills;
+  var getCurrentId = getCurrentId;
 
   function getBills() {
     BillService.getAll()
@@ -10,6 +11,10 @@ angular.module('splitter')
       self.bills = response;
     });
   }
+
+  self.getCurrentId = function(){
+    return parseInt(localStorage.getItem("userId"));
+  };
 
   self.takePicture = function(eventName) {
     var options = {
