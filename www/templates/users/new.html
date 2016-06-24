@@ -1,7 +1,7 @@
 <ion-view class="bar-positive">
   <ion-content class="bg">
 
-      <img src="img/splitter_logo.png" class="logo">
+      <a ng-href="#/"><img src="img/splitter_logo.png" class="logo"></a>
       <p class="title-font3"> sign up </p>
       <form ng-submit="handleRegBtnClick(registrationForm)" role="form" ng-init="registrationForm = {}">
         <div clas="form-group">
@@ -21,7 +21,7 @@
           <input type="password" placeholder="Password Confirmation" name="password_confirmation" ng-model="registrationForm.password_confirmation" required class="form-control"/>
           </label>
         </div>
-        
+
         <button type="submit" class="button button-block button-dark"><b>Register</b></button>
       </form>
 

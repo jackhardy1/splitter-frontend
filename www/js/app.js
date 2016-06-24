@@ -1,4 +1,4 @@
-angular.module('splitter', ['ionic', 'ngCordova', 'ng-token-auth'])
+angular.module('splitter', ['ionic','ionic.service.core', 'ngCordova', 'ng-token-auth'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

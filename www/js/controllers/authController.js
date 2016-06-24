@@ -36,14 +36,14 @@ angular.module('splitter')
    };
 
    $scope.handleSignOutBtnClick = function() {
-     $auth.signOut()
-       .then(function(resp) {
+   //   $auth.signOut()
+   //     .then(function(resp) {
          localStorage.setItem("email",null);
          $state.go('home');
       //  handle success response
-       })
-       .catch(function(resp) {
-         alert("error!");
-       });
+      //  })
+   //     .catch(function(resp) {
+   //       alert("error!");
+   //     });
    };
 });

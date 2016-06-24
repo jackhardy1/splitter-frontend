@@ -1,13 +1,38 @@
 /* Empty. Add your own CSS if you like */
 
 .bills {
+  top: 66px;
+  bottom: 45px;
+  padding: 10px;
+}
+
+table{
+  width: 100%;
+}
+.items {
     top: 32px;
     bottom: 49px;
 }
 
+.item {
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 20px;
+  margin: 8px 0px;
+  border-radius: 20px
+
+}
+
+.bar-header a {
+    padding: 13px;
+}
+
 a {
   text-decoration: none;
+  color: black;
 }
+
+
+
 
 .bar-header {
   padding-bottom: 60px;
@@ -18,7 +43,7 @@ a {
 }
 
 .bg {
-  background-image: url("/img/Light-Wood-Background.jpg");
+  background-image: url("http://i.imgur.com/Y8jvpvX.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -40,6 +65,7 @@ a {
 
 .logo-smaller {
   width:35px;
+  padding-bottom: 3px;
   height: auto;
   -webkit-filter: drop-shadow(1px 1px 1px #424242);
 }
@@ -58,16 +84,26 @@ a {
   color: blue;
 }
 
+.list-text {
+  font-size: 12px;
+
+}
+
 .title {
-  text-align: center;
-  padding-top: 3px;
-  padding-bottom: 3px;
   font-size: 20px;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
 }
 
 .title2 {
   font-size: 15px;
+}
+
+td {
+  font-size: 15px;
+}
+
+tr {
+  padding-top: 10px;
 }
 
 .title-font2 {
@@ -126,6 +162,12 @@ a {
   margin: 0px 30px 0px 30px;
 }
 
+.box2 {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  border-radius: 20px;
+}
+
 .bar-stable {
   text-align: center;
 }
@@ -144,21 +186,29 @@ h3 {
   margin: 0px 20px 15px 20px;
   text-shadow: 2px 2px 2px rgba(255,255,255,0.3);
 }
-
+.bar.bar-stable .title {
+    left: 21px;
+    right: 21px;
+    top: 10px;
+    font-size: 31px;
+}
+h3.ng-binding {
+    font-size: 22px;
+}
 .container1 {
   margin-top: 20px;
 }
 
-.backbutton {
-    padding: 10px 0px 0px 10px;
-}
 .ion-ios-arrow-back {
   font-size: 30px;
   text-decoration: none;
   text-shadow: 2px 2px 2px rgba(0,0,0,0.2);
 }
 
-.ion-ios-list-outline {
-  vertical-align: sub;
+.ion-trash-a {
+  font-size: 30px;
+}
+
+.ion-compose {
   font-size: 30px;
 }
