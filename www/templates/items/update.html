@@ -1,20 +1,19 @@
 <ion-modal-view view-title="Show Bill">
-  <ion-content>
-    <h1 id="title">Edit page</h1>
+  <ion-content class="bg">
+    <a ng-href="#/"><img src="img/splitter_logo.png" class="logo"></a>
+    <h1 id="title">Edit Item</h1>
       <form class="list" ng-submit="ctrl.editItem(itemId,item)">
-        <label class="item item-input item-stacked-label">
-          <span class="input-label">Name</span>
-          <input ng-model="item.name" type="text">
+        <label class= "item-input item-stacked-label">
+          <span class="input-label title4"><b>Name</b></span>
+          <input class="centertxt" ng-model="item.name" type="text" placeholder="&nbsp;&nbsp;Item Name ...">;
         </label>
-        <label class="item item-input item-stacked-label">
-          <span class="input-label">Total Price</span>
-          <input ng-model="item.price" type="text">
+        <label class="item-input item-stacked-label">
+          <span class="input-label title4"><b>Price</b></span>
+          <input class="centertxt" ng-model="item.price" type="text" placeholder="&nbsp;&nbsp;Item Price £...">
         </label>
-        <label class="item item-input item-stacked-label">
-          <span class="input-label">Quantity</span>
-          <input ng-model="item.quantity" type="text">
-        </label>
-        <button type="submit">Submit</button>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p><button class="button icon button-full button-stable" type="submit"><b>Save Changes</b></button></p>
       </form>
   </ion-content>
 </ion-modal-view>

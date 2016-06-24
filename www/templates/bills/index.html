@@ -1,10 +1,19 @@
 <ion-view view-title="Bills">
-  <ion-content>
-    <h1 class="title">My Bills</h2>
+  <ion-header-bar align-title="center" class="bar-stable">
+    <a class="backbutton" ng-href="#/"><i class="ion-ios-arrow-back"></i></a><h1 class="title"><b>BILLS</b>&nbsp;&nbsp;<i class="ion-ios-paper-outline"></i></h1>
+    <p></p>
+  </ion-header-bar>
+
+  <ion-content class="bills bg">
     <ul class="list" ng-init="ctrl.getBills()">
-      <li class="bills item" ng-repeat="bill in ctrl.bills | orderBy: '-'" ng-show="bill.user_id==ctrl.getCurrentId()">
+      <li class="item itemtrans" ng-repeat="bill in ctrl.bills | orderBy: '-'" ng-show="bill.user_id==ctrl.getCurrentId()">
         <a href="#/bills/{{bill.id}}"><h3>{{bill.event}}</h3></a>
       </li>
     </ul>
+
   </ion-content>
+
+  <ion-footer-bar align-title="center" class="bar-stable">
+    <a class="backbutton" ng-href="#/"><h1 class="title"><img src="img/splitter_logo.png" class="logo-smaller" style=""></h1></a>
+  </ion-footer-bar>
 </ion-view>

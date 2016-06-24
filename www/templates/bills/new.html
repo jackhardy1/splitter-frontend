@@ -1,14 +1,23 @@
 <ion-view view-title="Add a new bill">
-  <ion-content>
-    <h3>How to get the best results from your photo.</h3>
-    <ul>
+  <ion-content class="bg">
+  <div class="container1">
+    <p class="title"><img src="img/splitter_logo.png" class="logo-small" style=""></p>
+    <h3><b>Photo Instructions</b></h3>
+
+    <div class="box">
+    <ul class="instructions-text">
       <li>Take a vertical photo of just the items and the total in the receipt.</li>
-      <li>Crop the photo so that it only contains the receipt.</li>
-      <li>Make sure that the text is in line horizontally with the phone.</li>
-      <li>Ensure the photo is well lit.</li>
+      <p><li>Crop the photo so that it only contains the receipt.</li></p>
+      <p><li>Make sure that the text is in line horizontally with the phone.</li></p>
+      <p><li>Ensure the photo is well lit.</li></p>
     </ul>
-    <h5>Event name</h5>
-    <input type="text" ng-model="eventName" required="required"/>
-    <a ng-click="ctrl.takePicture(eventName)" id="take-photo" class="button icon button-full button-calm">Take Photo</a>
+    </div>
+
+    <p class="event-name-text shadow1">Event Name</p>
+    <label class="item item-input margin-box">
+      <input type="text" ng-model="eventName" placeholder="Enter event name ..."required="required"/>
+    </label>
+    <a ng-click="ctrl.takePicture(eventName)" id="take-photo" class="button icon button-full button-dark bottom"><i class="icon ion-camera"></i>&nbsp&nbsp&nbsp<b>TAKE PHOTO</b></a>
+  </div>
   </ion-content>
 </ion-view>

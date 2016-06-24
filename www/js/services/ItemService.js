@@ -12,7 +12,6 @@ angular.module('splitter')
 
   function sendEmail(billId) {
     emailUrl = 'http://splitter-backend.herokuapp.com/bills/mailer';
-    console.log(billId);
     $http.post(emailUrl,  { bill_id: billId } );
   }
 
@@ -28,12 +27,12 @@ angular.module('splitter')
     items.forEach(function(item){
       if(item.quantity > 1) {
         var quantity = item.quantity;
+        self.removeItem(item.bill_id, item.id);
         for(i=0; i < quantity; i++ ){
           price = (item.price)/quantity;
           params = {name: item.name, price: price, quantity: 1, contact: item.contact};
           self.addItem(item.bill_id, params);
         }
-        self.removeItem(item.bill_id, item.id);
       }
     });
      self.getAllItems(items[0].bill_id);

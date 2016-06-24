@@ -1,23 +1,51 @@
-    <ion-view view-title="Show Bill">
-      <ion-content ng-init="ctrl.getItems(ctrl.currentId)">
-        <h1 id="title">Bill Items</h1>
-        <ul>
-          <li class="item" ng-repeat="item in ctrl.items | filter: {contact: null}">
-            <input type="checkbox"  class="selectedItem" ng-model="selectedItems" value="{{item.id}}">
-            Name: {{ item.name  }}
-             / Quantity: {{ item.quantity }}
-             / Total Price: {{ item.price }}
-            <button id="remove-item" ng-click="ctrl.removeItem( {{item.id}} )">Delete Item</button>
-            <button id="edit-item" ng-click="openModalA(item.id)">Edit Item</button>
-          </li>
-          <button id="add-item"  ng-click="openModalB(item.id)">Add Item</button>
-          <div>
-            <input class="item-input" ng-model="email" type="email" name="email" placeholder="Assign checked items to this email">
-            <button id="assign-email" ng-click="ctrl.addEmail(email, selectedItems)">Assign Items</button>
-          </div>
-        </select>
-        </ul>
-          Bill Total: {{ ctrl.billTotal }}
-          <button ng-click="ctrl.sendEmail()">Send payment request</button>
-      </ion-content>
-    </ion-view>
+<ion-view view-title="Show Bill">
+<ion-header-bar align-title="center" class="bar-stable">
+
+
+  <i class=""></i><h1 class="title"><b>ITEMS</b>&nbsp&nbsp<i class="ion-ios-list-outline"></i></h1>
+
+
+  <div class="bar bar-header">
+  <a ng-href="#/bills/index"><i class="ion-ios-arrow-back"></i></a>
+  <h1 class="title"><b>ITEMS</b>&nbsp;&nbsp;<i class="ion-ios-list-outline"></i></h1>
+
+</div>
+</ion-header-bar>
+  <ion-content class="bills bg">
+    <div ng-init="ctrl.getItems(ctrl.currentId)">
+
+      <div>
+        <input class="item-input centertxt" ng-model="email" type="email" name="email" placeholder=" &nbsp; Assign checked items to this email ...">
+      </div>
+
+      <button class="button icon button-full button-stable" id="add-item"  ng-click="openModalB(item.id)"><b>Add Item</b></button>
+    <table>
+      <th></th>
+      <th><b>NAME</b></th>
+      <th><b>Price</b></th>
+      <th></th>
+      <tr class="box2" ng-repeat="item in ctrl.items | filter: {contact: null}">
+        <td><input type="checkbox"  class="selectedItem" ng-model="selectedItems" value="{{item.id}}">&nbsp;</td>
+        <td>{{ item.name  }}</td>
+        <td>£{{ item.price }}</td>
+        <td>
+          <a id="remove-item" ng-click="ctrl.removeItem( {{item.id}} )"><i class="ion-trash-a"></i></a>
+          &nbsp;
+          <a id="edit-item" ng-click="openModalA(item.id)"><i class="ion-compose"></i></a>
+        </td>
+
+      </tr>
+    </table>
+
+    <button class="button icon button-full button-stable" id="assign-email" ng-click="ctrl.addEmail(email, selectedItems)"><b>Assign Items</b></button>
+    <p class="title2 box2">Remaining Total: <b> £{{ ctrl.billTotal }}</b></p>
+    <button class="button icon button-full button-stable" ng-click="ctrl.sendEmail()"><b>Send payment request</b></button>
+
+    <p></p>
+  </div>
+
+  </ion-content>
+  <ion-footer-bar align-title="center" class="bar-stable">
+    <a class="backbutton" ng-href="#/"><h1 class="title"><img src="img/splitter_logo.png" class="logo-smaller" style=""></h1></a>
+  </ion-footer-bar>
+</ion-view>

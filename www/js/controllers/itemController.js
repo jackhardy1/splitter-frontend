@@ -68,7 +68,9 @@ angular.module('splitter')
   function getBillTotal() {
     self.billTotal = 0;
     self.items.forEach(function(item){
-      self.billTotal += item.price;
+      if(item.contact === null){
+        self.billTotal += item.price;
+      }
    });
   }
 
