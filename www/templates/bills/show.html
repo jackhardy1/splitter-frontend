@@ -15,9 +15,10 @@
     <div ng-init="ctrl.getItems(ctrl.currentId)">
 
       <div>
-        <input class="item-input" ng-model="email" type="email" name="email" placeholder=" &nbsp; Assign checked items to this email ...">
+        <input class="item-input centertxt" ng-model="email" type="email" name="email" placeholder=" &nbsp; Assign checked items to this email ...">
       </div>
-      <button ng-click="ctrl.sendEmail()">Send payment request</button>
+
+      <button class="button icon button-full button-stable" id="add-item"  ng-click="openModalB(item.id)"><b>Add Item</b></button>
     <table>
       <th></th>
       <th><b>NAME</b></th>
@@ -36,11 +37,13 @@
       </tr>
     </table>
 
-      <button id="assign-email" ng-click="ctrl.addEmail(email, selectedItems)">Assign Items</button>
+    <button class="button icon button-full button-stable" id="assign-email" ng-click="ctrl.addEmail(email, selectedItems)"><b>Assign Items</b></button>
+    <p class="title2 box2">Remaining Total: <b> £{{ ctrl.billTotal }}</b></p>
+    <button class="button icon button-full button-stable" ng-click="ctrl.sendEmail()"><b>Send payment request</b></button>
 
-      <p>Remaining Total: {{ ctrl.billTotal }}</p>
     <p></p>
   </div>
+
   </ion-content>
   <ion-footer-bar align-title="center" class="bar-stable">
     <a class="backbutton" ng-href="#/"><h1 class="title"><img src="img/splitter_logo.png" class="logo-smaller" style=""></h1></a>
