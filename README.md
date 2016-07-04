@@ -1,25 +1,37 @@
-Ionic App Base
-=====================
+# Splitter App
 
-A starting project for Ionic that optionally supports using custom SCSS.
+Makers Academy final project
 
-## Using this project
+A bill splitter app, which uses optical character recognition to convert an image of a receipt to an editable list on an ios / android app, making the payment process less awkward, quicker & easier.
 
-We recommend using the [Ionic CLI](https://github.com/driftyco/ionic-cli) to create new Ionic projects that are based on this project but use a ready-made starter template.
+For this project, we used a completely de-coupled frontend and backend.
 
-For example, to start a new Ionic project with the default tabs interface, make sure the `ionic` utility is installed:
+For a live demo: https://vimeo.com/172722048.
 
-```bash
-$ npm install -g ionic
-```
+##Splitter Frontend
 
-Then run: 
+### Technologies used
+- Ionic
+- AngularJS
 
-```bash
-$ ionic start myProject tabs
-```
+### Instructions for use
+`$ git clone https://github.com/jackhardy1/splitter-frontend`  
+`$ npm install`  
+`$ bower install`
 
-More info on this can be found on the Ionic [Getting Started](http://ionicframework.com/getting-started) page and the [Ionic CLI](https://github.com/driftyco/ionic-cli) repo.
+### To run servers - make sure the following are running in separate tabs
+`$ npm run webdriver-manager start`  
+`$ npm run start`  
+`$ ionic serve`
 
-## Issues
-Issues have been disabled on this repo, if you do find an issue or have a question consider posting it on the [Ionic Forum](http://forum.ionicframework.com/).  Or else if there is truly an error, follow our guidelines for [submitting an issue](http://ionicframework.com/submit-issue/) to the main Ionic repository.
+## To run the unit tests, using Karma, run:
+`$ karma start test/karma.conf.js`
+
+## To run the feature tests, using Protractor, run:
+`$ protractor test/protractor.conf.js`
+
+##Contributors
+- Jack Hardy
+- Noah Pollock
+- Wayne Rumble
+- Matt Ward
