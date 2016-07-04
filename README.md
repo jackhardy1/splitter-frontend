@@ -15,20 +15,20 @@ For a live demo: https://vimeo.com/172722048.
 - AngularJS
 
 ### Instructions for use
-`$ git clone https://github.com/jackhardy1/splitter-frontend`
-`$ npm install`
+`$ git clone https://github.com/jackhardy1/splitter-frontend`  
+`$ npm install`  
 `$ bower install`
 
 ### To run servers - make sure the following are running in separate tabs
-`$ npm run webdriver-manager start`
-`$ npm run start`
+`$ npm run webdriver-manager start`  
+`$ npm run start`  
 `$ ionic serve`
 
 ## To run the unit tests, using Karma, run:
-- $ karma start test/karma.conf.js
+`$ karma start test/karma.conf.js`
 
 ## To run the feature tests, using Protractor, run:
-- $ protractor test/protractor.conf.js
+`$ protractor test/protractor.conf.js`
 
 ##Contributors
 - Jack Hardy
